@@ -1,0 +1,35 @@
+<style>
+    .flex{
+        display: flex;
+    }
+
+    .flex-col{
+        flex-direction: column;
+    }
+
+    .flex-row{
+        flex-direction: row;
+    }
+
+    .mt-5{
+        margin-top: 1rem;
+    }
+
+    .justify-center{
+        justify-content: center;
+    }
+</style>
+
+<%= form_with url: "calculate", method: :post , data: {turbo: false} do |form| %>
+    <div class = "flex flex-col mt-5">
+        <div class = "flex justify-center mt-5">Your Grade</div>
+        <% (1..@n).each do |i| %>
+            <div class = "flex mt-5 justify-center">
+                <%= form.label :query, "Subject#{i} :"%>
+                <%= form.text_field :"sub#{i}", :required => true %>
+                <%= form.text_field :"grd#{i}", :required => true %>
+            </div>       
+        <% end %>
+        <div class = "flex justify-center mt-5"><%= form.submit "Submit" %></div>
+    </div>
+<% end %>

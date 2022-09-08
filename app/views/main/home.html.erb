@@ -1,0 +1,18 @@
+<%= form_with url: "main/check", method: :post , data: {turbo: false} do |form| %>
+    <div style = "text-align: center; margin-top: 1rem;">
+      <%= form.label :count, "Amout Of Subject :" %>
+      <select id="dropdown-form" name="ddform" style = "width: 100px;">
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+        <option value=5>5</option>
+        <option value=6>6</option>
+        <option value=7>7</option>
+        <option value=8>8</option>
+        <option value=9>9</option>
+        <option value=10>10</option>
+      </select>
+      <%= form.submit "Submit" %>
+    </div>
+  <% end %>
